@@ -2,6 +2,19 @@ require "str"
 require "server"
 require "ft7"
 require "menu"
+require "interactive_items"
+
+local CUSTOM_MENU_ENABLED = false
+
+local debug_function_call_times = 0
+function onInteractiveItemLoaded(instance_id, item_type)
+    debug_function_call_times = debug_function_call_times + 1
+    spawnCustomButtonForItem(instance_id, item_type)
+end
+
+function onCustomButtonUsed(user_agent_id, instance_id)
+    customButtomUsed(user_agent_id, instance_id)
+end
 
 function onOtherMenuActive(player, flag, other_flag)
     if(flag ~= other_flag) then
@@ -15,7 +28,9 @@ function onCustomMenuSelected(player, flag, key)
 end
 
 function onCustomMenuInit(player)
-    showMenu(player, 1)
+    if(CUSTOM_MENU_ENABLED) then
+        showMenu(player, 1)
+    end
 end
 
 function onDuelModeEndOrMapChange()
@@ -129,6 +144,9 @@ function receivePlayerCommand(player, command, gametype)
             sendServerMessage(player, "undefined argument")
         end
         --ft7 end
+    elseif(argv[1] == "debug") then
+        sendServerMessage(player, "Debug " .. buttonDebug())
+        sendServerMessage(player, "Debug " .. debug_function_call_times)
     else
         sendServerMessage(player, "undefined command")
     end

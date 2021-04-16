@@ -19963,6 +19963,24 @@ scripts = [
           (try_end),
        (try_end),
      (try_end),
+     #mondo muyo
+     (try_begin),
+       (multiplayer_is_dedicated_server),
+        (try_for_prop_instances, ":item_prop", 0, somt_item),
+          (prop_instance_get_scene_prop_kind, ":item_kind", ":item_prop"),
+          
+          (this_or_next|eq, ":item_kind", "itm_drinking_cup"),
+          (this_or_next|eq, ":item_kind", "itm_drinking_tea_cup"),
+          (this_or_next|eq, ":item_kind", "itm_drinking_tea_cup_plate"),
+          (this_or_next|eq, ":item_kind", "itm_drinking_bottle"),
+          (this_or_next|eq, ":item_kind", "itm_brokenbottle"),
+          (eq, ":item_kind", "itm_drinking_bottle_melee"),
+          (lua_push_int, ":item_prop"),
+          (lua_push_int, ":item_kind"),
+          (lua_call, "@onInteractiveItemLoaded", 2),
+          
+      (try_end),
+     (try_end),
       
     (try_end),
    ]),

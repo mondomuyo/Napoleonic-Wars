@@ -4894,6 +4894,15 @@ scene_props = [
   ("custom_button_1_second",spr_use_time(1),"0","cannon_button_collision", [
     (ti_on_scene_prop_use,
     [        #add custom server side code here.. 
+      #mondo muyo
+      (try_begin),
+        (multiplayer_is_dedicated_server),
+        (store_trigger_param_1, ":user_agent_id"),
+        (store_trigger_param_2, ":instance_id"),
+        (lua_push_int, ":user_agent_id"),
+        (lua_push_int, ":instance_id"),
+        (lua_call, "@onCustomButtonUsed", 2),
+      (try_end),
     ]),
   ]),
   ("custom_button_2_seconds",spr_use_time(2),"0","cannon_button_collision", [

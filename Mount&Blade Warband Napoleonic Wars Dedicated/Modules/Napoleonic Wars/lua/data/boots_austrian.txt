@@ -1,0 +1,10 @@
+austrian_infantry_pants 807
+hungarian_pants 808
+hungarian_pants_officer 809
+austrian_jaeger_pants 810
+austrian_jaeger_pants_officer 811
+hungarian_hussar_pants 812
+hungarian_uhlan_pants 813
+austrian_schwarzenberg_pants 814
+austrian_officer_boots 815
+austrian_cavalry_boots 816

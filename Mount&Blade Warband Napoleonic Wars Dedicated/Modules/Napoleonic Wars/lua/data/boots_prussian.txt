@@ -1,0 +1,10 @@
+prussian_infantry_pants 835
+prussian_jaeger_pants 836
+prussian_landwehr_pants 837
+prussian_landwehr_pants2 838
+prussian_blucher_pants 839
+prussian_cavalry_pants 840
+prussian_cavalry_pants2 841
+prussian_hussar_pants 842
+prussian_hussar_pants_officer 843
+prussian_freikorps_pants 844

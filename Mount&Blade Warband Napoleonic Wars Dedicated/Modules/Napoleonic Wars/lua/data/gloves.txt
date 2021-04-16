@@ -1,0 +1,9 @@
+officer_gloves 863
+drummer_gloves 864
+rus_chevgarde_gloves 865
+fr_cuirassier_gloves 866
+fr_artillery_gloves 867
+br_cavalry_gloves 868
+br_horseguard_gloves 869
+br_cavalry_gloves_short 870
+br_horseguard_gloves_short 871

@@ -1,0 +1,11 @@
+training_officer_sword 99
+training_heavy_sword 100
+training_light_sabre 101
+training_musket 163
+drinking_cup 219
+drinking_tea_cup 220
+drinking_tea_cup_plate 221
+drinking_bottle 222
+cane 224
+key 217
+key_gold 218

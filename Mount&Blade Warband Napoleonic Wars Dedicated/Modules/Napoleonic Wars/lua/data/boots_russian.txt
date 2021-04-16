@@ -1,0 +1,17 @@
+rus_infantry_pants1 790
+rus_infantry_pants2 791
+rus_hussar_pants1 792
+rus_hussar_pants2 793
+rus_hussar_pants_nco 794
+rus_hussar_pants_officer 795
+rus_horse_guard_pants 796
+rus_cossack_off_pants 797
+rus_kutuzov_pants 798
+rus_militia_off_pants 799
+rus_militia_ranker_pants 800
+rus_militia_ranker_pants1 801
+rus_jaeger_pants 802
+rus_arty_pants 803
+rus_dragoon_pants1 804
+rus_dragoon_pants2 805
+rus_uhlan_pants 806

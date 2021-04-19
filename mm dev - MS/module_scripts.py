@@ -19973,7 +19973,6 @@ scripts = [
           (this_or_next|eq, ":item_kind", "itm_drinking_tea_cup"),
           (this_or_next|eq, ":item_kind", "itm_drinking_tea_cup_plate"),
           (this_or_next|eq, ":item_kind", "itm_drinking_bottle"),
-          (this_or_next|eq, ":item_kind", "itm_brokenbottle"),
           (eq, ":item_kind", "itm_drinking_bottle_melee"),
           (lua_push_int, ":item_prop"),
           (lua_push_int, ":item_kind"),

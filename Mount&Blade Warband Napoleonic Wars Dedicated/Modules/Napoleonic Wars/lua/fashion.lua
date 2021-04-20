@@ -103,7 +103,7 @@ fashion_menus[curflag]["size"] = i
 io.close(file)
 
 function fashionGetSlot(item)
-    return game.item_get_type(0, item) + 8
+    return game.item_get_type(0, item) - 8
 end
 
 function processFashionMenu(player, flag, key)

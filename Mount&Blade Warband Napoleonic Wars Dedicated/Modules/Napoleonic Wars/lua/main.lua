@@ -4,7 +4,7 @@ require "ft7"
 require "menu"
 require "interactive_items"
 
-local CUSTOM_MENU_ENABLED = false
+local CUSTOM_MENU_ENABLED = true
 
 local debug_function_call_times = 0
 function onInteractiveItemLoaded(instance_id, item_type)

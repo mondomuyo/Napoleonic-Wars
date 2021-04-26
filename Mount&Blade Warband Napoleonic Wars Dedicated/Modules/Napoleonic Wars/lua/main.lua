@@ -1,14 +1,12 @@
 require "str"
 require "server"
 require "ft7"
-require "menu"
+require "menus"
 require "interactive_items"
 
 local CUSTOM_MENU_ENABLED = true
 
-local debug_function_call_times = 0
 function onInteractiveItemLoaded(instance_id, item_type)
-    debug_function_call_times = debug_function_call_times + 1
     spawnCustomButtonForItem(instance_id, item_type)
 end
 
@@ -84,7 +82,6 @@ end
 
 
 function receivePlayerCommand(player, command, gametype)
-    --sendColoredMessage(player, "测 试 成 功", 0x87CEFA)
     local argc, argv = split(command, " ")
     if (argc == 0) then
         return nil
@@ -144,10 +141,6 @@ function receivePlayerCommand(player, command, gametype)
             sendServerMessage(player, "undefined argument")
         end
         --ft7 end
-    elseif(argv[1] == "debug") then
-        sendServerMessage(player, "Debug " .. buttonDebug())
-        sendServerMessage(player, "Debug " .. debug_function_call_times)
-    else
         sendServerMessage(player, "undefined command")
     end
 end

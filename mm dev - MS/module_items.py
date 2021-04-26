@@ -796,7 +796,9 @@ items = [
   [
     (store_trigger_param_1, ":thrower_agent"),
     #pos1 - Missile hit position
-    (copy_position,pos47,pos1),
+    (agent_get_position, pos47, ":thrower_agent"),
+    #(copy_position,pos47,pos1),
+    (agent_set_position, ":thrower_agent", pos1),
     (call_script,"script_explosion_at_position",":thrower_agent",500,500), # Input: shooter_agent_no, max_damage points, range in cm
    ]),
  ]],

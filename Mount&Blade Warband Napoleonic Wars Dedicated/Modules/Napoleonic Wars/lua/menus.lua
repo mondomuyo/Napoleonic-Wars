@@ -67,10 +67,8 @@ function loadMenu(filename, begFlag, menuname, menutype)
     end
     if(menus[begFlag] == nil) then
         initMenu(begFlag, "No More")
-        addOption(begFlag, {type = EXIT}, "exit")
-    else
-        addOption(begFlag, {type = EXIT}, "exit")
     end
+    addOption(begFlag, {type = EXIT}, "exit")
     return begFlag + 1
 end
 
@@ -138,4 +136,3 @@ do
     addOption(101, {type = SUBMENU, flag = curFlag}, "gloves")
     loadMenu("./data/gloves.txt", curFlag, "gloves", EQUIP_COSTUME)
 end -- fashion menus added
-

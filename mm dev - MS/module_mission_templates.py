@@ -2674,6 +2674,17 @@ multiplayer_server_agent_hit_common = (
 
     # patch1115 surgeon begin
     (try_begin),
+      #mondo muyo
+      (agent_slot_eq, ":hit_agent_no", slot_agent_god_mode, 1),
+      (agent_get_horse,":horse",":hit_agent_no"),
+      (neg|agent_is_active,":horse"),
+      (agent_get_position, pos1, ":hit_agent_no"),
+      (set_spawn_position, pos1),
+      (spawn_scene_prop, "spr_dummy_a"),
+      (position_move_y, pos1, -250),
+      (agent_set_position, ":hit_agent_no", pos1),
+      (set_trigger_result, 0),
+    (else_try),
       (eq, ":item_id", "itm_bandages"),
       (store_trigger_param_2,":attacker_agent_no"),
      # (store_trigger_param_3,":damage"),      

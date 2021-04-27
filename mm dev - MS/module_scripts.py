@@ -5823,7 +5823,9 @@ scripts = [
                 (assign,":value",55),
               (else_try),
                 (agent_slot_eq, ":player_agent", slot_agent_god_mode, 1),
-                (assign,":value",350),
+                #change god mode speed
+                (assign,":value",100),
+                # (assign,":value",350),
                 (agent_set_horse_speed_factor, ":player_agent", 100),
               (else_try),
                 (assign,":value",100),
@@ -5854,7 +5856,9 @@ scripts = [
                 
                 (try_begin),
                   (agent_slot_eq, ":player_agent", slot_agent_god_mode, 1),
-                  (assign,":value",350),
+                  #change god mode speed
+                  (assign,":value",100),
+                  # (assign,":value",350),
                   (agent_set_horse_speed_factor, ":player_agent", 100),
                 (else_try),
                   (assign,":value",100),
@@ -16731,8 +16735,11 @@ scripts = [
             (eq, ":player_god_mode", 0),
             (agent_set_no_death_knock_down_only, ":player_agent_no", 1),
             (agent_set_slot, ":player_agent_no", slot_agent_god_mode, 1),
-            (agent_set_speed_modifier,":player_agent_no", 350),
-            (agent_set_slot,":player_agent_no",slot_agent_base_speed_mod,350),
+            #change god mode speed
+            (agent_set_speed_modifier,":player_agent_no", 100),
+            (agent_set_slot,":player_agent_no",slot_agent_base_speed_mod,100),
+            # (agent_set_speed_modifier,":player_agent_no", 350),
+            # (agent_set_slot,":player_agent_no",slot_agent_base_speed_mod,350),
             #(agent_set_horse_speed_factor, ":player_agent_no", 100),
             (assign, reg0, 1),
             (assign, reg60, 1),
@@ -28541,7 +28548,9 @@ scripts = [
       (agent_get_slot,":base_speed",":agent_id",slot_agent_base_speed_mod),
 			(try_begin),
 			  (agent_slot_eq, ":agent_id", slot_agent_god_mode, 1),
-				(assign, ":base_speed", 350),
+        #change god mode speed
+        (assign, ":base_speed", 100),
+				# (assign, ":base_speed", 350),
 			  (agent_set_slot,":agent_id",slot_agent_base_speed_mod, 350),
 		  (else_try),
 			  (lt, ":base_speed", 100),

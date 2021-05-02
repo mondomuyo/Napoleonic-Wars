@@ -113,7 +113,7 @@ function receivePlayerCommand(player, command, gametype)
             for curPlayer in game.playersI(1) do
                 local name = getPlayerName(curPlayer)
                 local uid = game.player_get_unique_id(0, curPlayer)
-                sendServerMessage(player, "name:" .. name .. " uid:" .. uid)
+                sendServerMessage(player, "name:" .. name .. " uid:" .. uid .. " id:" .. curPlayer)
             end
         elseif(argv[2] == "admins") then
             for curPlayer in game.playersI(1) do

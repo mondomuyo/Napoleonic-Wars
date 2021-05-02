@@ -2874,6 +2874,37 @@ multiplayer_server_agent_hit_common = (
           
           (agent_clear_scripted_mode,":hit_agent_no"),
         (try_end),
+
+        (try_begin),
+          #mondo muyo - for cavalry GF
+          (multiplayer_is_dedicated_server),
+          (store_trigger_param_1, ":receiver"),
+          (store_trigger_param_2, ":attacker"),
+          (store_trigger_param_3, ":damage"),
+          (agent_is_active, ":attacker"),
+          (neq, ":receiver", ":attacker"), # not hitting yourself.
+          (neg|agent_is_non_player, ":attacker"), # attacker must always be player
+
+          (try_begin),
+            #hit a player
+            (agent_is_human, ":receiver"),
+            (neg|agent_is_non_player, ":receiver"),
+            (lua_push_int, ":attacker"),
+            (lua_push_int, ":receiver"),
+            (lua_push_int, ":damage"),
+            (lua_call, "@onPlayerAgentHitCommon", 3),
+          (else_try),
+            #hit a player's horse
+            (neg|agent_is_human, ":receiver"),
+            (agent_get_rider, ":rider", ":receiver"),
+            (neq, ":rider", ":attacker"), # not hitting your own horse.
+            (neg|agent_is_non_player, ":rider"),
+            (lua_push_int, ":attacker"),
+            (lua_push_int, ":rider"),
+            (lua_push_int, ":damage"),
+            (lua_call, "@onPlayersHorseAgentHitCommon", 3),
+          (try_end),
+        (try_end),
         
         #patch1115 fix 41/1 change begin 
         (multiplayer_is_dedicated_server), # only dedi logs shit.

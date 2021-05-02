@@ -6,6 +6,14 @@ require "interactive_items"
 
 local CUSTOM_MENU_ENABLED = true
 
+function onPlayerAgentHitCommon(attacker, receiver, damage)
+    sendColoredMessage(attacker, "You hit " .. getPlayerName(receiver) .. "! Damage:" .. damage, 0xF9F900)
+end
+
+function onPlayersHorseAgentHitCommon(attacker, rider, damage)
+    sendColoredMessage(attacker, "You hit " .. getPlayerName(rider) .. "'s horse! Damage:" .. damage, 0x64A600)
+end
+
 function onInteractiveItemLoaded(instance_id, item_type)
     spawnCustomButtonForItem(instance_id, item_type)
 end

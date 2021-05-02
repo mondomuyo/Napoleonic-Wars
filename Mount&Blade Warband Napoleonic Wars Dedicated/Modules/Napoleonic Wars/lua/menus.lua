@@ -1,5 +1,5 @@
 require "str"
-require "equip"
+require "server"
 --todo : add horses
 
 -- constants

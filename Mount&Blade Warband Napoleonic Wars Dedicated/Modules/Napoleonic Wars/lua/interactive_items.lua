@@ -7,12 +7,13 @@ local custom_buttons = {}
 
 local SPAWN_ITEM = 1
 
-local spr_custom_button_1_second = 1605
+
+
 
 function spawnCustomButtonForItem(instance_id, item_type)
     game.prop_instance_get_position(54, instance_id)
     game.set_spawn_position(54)
-    game.spawn_scene_prop(spr_custom_button_1_second)
+    game.spawn_scene_prop(game.const.scene_props.spr_custom_button_1_second)
     local button_instance_id = game.reg[0]
     custom_buttons[button_instance_id] = {}
     custom_buttons[button_instance_id]["button type"] = SPAWN_ITEM
@@ -34,8 +35,4 @@ function customButtomUsed(user_agent_id, instance_id)
             customButtonSpawnItem(user_agent_id, instance_id)
         end
     end
-end
-
-function buttonDebug()
-    return #custom_buttons
 end
